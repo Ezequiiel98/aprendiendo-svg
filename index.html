@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        **** COMANDOS 
+
+        MoveTo: M,m
+        LineTo: L, l, H, h, V,v   // L l son lineas, H h son horizontales, V v son verticales, la diferencia de si es mayuscula o minuscula es que si es mayuscula toma el eje x y el y como referencia y si es minuscula toma como referencia la ultima posicion conocida (creo).
+
+        Cúbica curva de Bezier: C, c, S,s
+        Cuadrática de Bézier curva: Q, q, T,t
+        Elíptica arco de curva: A,a
+        ClosePath: Z,z da igual si pones mayus o minusculs, y esto sirve para dibujar desde la posicion actual hasta el primer punto o sea que cierre la ruta 
+
+        mas info https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d
+     -->
+    <!-- defino que voy a usar un svg  y sus medidas-->
+    <svg width="1000" height="1000">
+      
+        <!-- ************ L H V  Z ********** -->
+        <!-- empieza en 100 100, hace una horizontal desde donde esta hasta 180 despues una vertical desde donde esta hasta 180 despues vuelve con una horizontal a 100 y hace una linea de 100 en x y 100 en Y para cerrar el cuadrado -->
+        <path d="M 100 100 H 180 V 180 H 100 L 100 100"/>
+
+
+        <!-- mayusculas -->
+        <!-- <path d="M 10 10 H 90 V 90 H 10 L 10 10"/> -->
+        <!-- esto es lo mismo pero con minuculaas -->
+        <path d="M 10 10 h 90 v 90  h -90 v -90   " stroke="red" fill="green" />
+
+
+        <!-- ejemplo con Z , me ubico en x=200 y=200, de ahi voy una horizontal a 290 y bajo con vertical de 290 hago una horizontal que vuelve a 200 y con Z cierro el path haciendo una recta desde donde estoy  al primer punto-->
+        <path d="M 200 200 H 290 V 290 H 200 Z" fill="transparent" stroke="black"/>
+
+
+        <!-- CURVAS  -->
+
+        
+    </svg>
+</body>
+
+</html>
